@@ -32,6 +32,8 @@ class Account():
 
     def deposit(self, amount):
         self.amount = amount
+        self.balance = self.balance + self.amount
+        return self.balance
 
     def __str__(self):
         return f'Account owner: {self.owner}\nAccount balance: {self.balance}'
@@ -42,7 +44,12 @@ print('Hello and welcome to the bank account')
 
 client = input('Please enter the account holder: ')
 print(f'Account holder: {client}')
-opening_balance = input('Please enter the opening balance: ')
+opening_balance = float(input('Please enter the opening balance: '))
 acct1 = Account(client, opening_balance)
-
+print(acct1)
+transaction = input('Please type, d for deposit, w for withdraw, \
+or b for account balance: ')
+if transaction == 'd':
+    new_deposit = float(input('Please enter an ammount to deposit: '))
+    acct1.deposit(new_deposit) 
 print(acct1)
