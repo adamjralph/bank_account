@@ -23,10 +23,10 @@ class Account():
 
     def deposit(self,amount):
         self.ammount = amount
-        
-    def __str__(self,owner,balance):
-        print(f'Account owner: {self.owner}')
-        print(f'Account balance: {self.balance}')
 
+    def __str__(self):
+        a=f'Account owner: {self.owner}\n'
+        b=f'Account balance: {self.balance}'
+        return a+b
 acct1 = Account('Adam',100)
 print(acct1)
