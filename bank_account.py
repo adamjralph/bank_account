@@ -25,8 +25,6 @@ class Account():
         self.ammount = amount
 
     def __str__(self):
-        a=f'Account owner: {self.owner}\n'
-        b=f'Account balance: {self.balance}'
-        return a+b
+        return f'Account owner: {self.owner}\nAccount balance: {self.balance}'
 acct1 = Account('Adam',100)
 print(acct1)
