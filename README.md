@@ -17,7 +17,7 @@ Create a bank account program
 
  As an added requitement, withdrawals may not exceed the available balance
 
-Instantiate your class, make several deposits and withdrawals, 
-and test to 
-make sure the account can't be overdrawn.
+Instantiate your class, make several deposits and withdrawals 
+
+nd test to make sure the account can't be overdrawn.
 
