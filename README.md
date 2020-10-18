@@ -19,5 +19,5 @@ Create a bank account program
 
 Instantiate your class, make several deposits and withdrawals 
 
-nd test to make sure the account can't be overdrawn.
+and test to make sure the account can't be overdrawn.
 
