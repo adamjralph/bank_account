@@ -45,8 +45,6 @@ class Account():
 
 
 print('Hello and welcome to the bank account')
-
-
 client = input('Please enter the account holder: ')
 print(f'Account holder: {client}')
 opening_balance = float(input('Please enter the opening balance: '))
@@ -57,9 +55,21 @@ or b for account balance: ')
 if transaction == 'd':
     new_deposit = float(input('Please enter an amount to deposit: '))
     acct1.deposit(new_deposit)
+    print(acct1)
 elif transaction == 'w':
+    invalid_debit = True
+    
     new_withdawal = float(input('Please enter an amount to withdraw: '))
-    acct1.withdraw(new_withdawal)
+    while invalid_debit:
+        if new_withdawal > acct1.balance:
+            new_withdawal = float(input(f'Withdawal exceeds current account balance, {acct1.balance}. \n\
+Please enter another amount: '))
+        else:
+            acct1.withdraw(new_withdawal)
+            invalid_debit = False
+            print(acct1)
+elif transaction == 'b':
+    print(acct1.balance)
 print(acct1)
 #print('')
 #print(acct1.balance)
