@@ -57,8 +57,7 @@ if transaction == 'd':
     acct1.deposit(new_deposit)
     print(acct1)
 elif transaction == 'w':
-    invalid_debit = True
-    
+    invalid_debit = True    
     new_withdawal = float(input('Please enter an amount to withdraw: '))
     while invalid_debit:
         if new_withdawal > acct1.balance:
@@ -70,7 +69,3 @@ Please enter another amount: '))
             print(acct1)
 elif transaction == 'b':
     print(acct1.balance)
-print(acct1)
-#print('')
-#print(acct1.balance)
-#print(acct1.owner)
