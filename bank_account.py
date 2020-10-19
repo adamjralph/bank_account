@@ -34,7 +34,12 @@ class Account():
         self.amount = amount
         self.balance = self.balance + self.amount
         return self.balance
-
+    
+    def withdraw(self, debit):
+        self.debit = debit
+        self.balance = self.balance - self.debit
+        return self.balance
+    
     def __str__(self):
         return f'Account owner: {self.owner}\nAccount balance: {self.balance}'
 
@@ -50,6 +55,12 @@ print(acct1)
 transaction = input('Please type, d for deposit, w for withdraw, \
 or b for account balance: ')
 if transaction == 'd':
-    new_deposit = float(input('Please enter an ammount to deposit: '))
-    acct1.deposit(new_deposit) 
+    new_deposit = float(input('Please enter an amount to deposit: '))
+    acct1.deposit(new_deposit)
+elif transaction == 'w':
+    new_withdawal = float(input('Please enter an amount to withdraw: '))
+    acct1.withdraw(new_withdawal)
 print(acct1)
+#print('')
+#print(acct1.balance)
+#print(acct1.owner)
