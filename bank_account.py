@@ -51,27 +51,30 @@ opening_balance = float(input('Please enter the opening balance: '))
 acct1 = Account(client, opening_balance)
 print(acct1)
 enquiry = True
-while enquiry:
-
+while True:
     transaction = input("Please type, 'd' for deposit, 'w' for withdraw, \
 or b for account balance,\nor 'q' to quit: ")
-    if transaction == 'q':
-        enquiry == False
-        break
-    elif transaction == 'd':
-        new_deposit = float(input('Please enter an amount to deposit: '))
-        acct1.deposit(new_deposit)
-        print(acct1)
-    elif transaction == 'w':
-        invalid_debit = True    
-        new_withdawal = float(input('Please enter an amount to withdraw: '))
-        while invalid_debit:
-            if new_withdawal > acct1.balance:
-                new_withdawal = float(input(f'Withdawal exceeds current account balance, {acct1.balance}. \n\
+    try:
+        transaction == 'd' or 'w' or 'b' or 'q'
+    except:
+        print('Invalid input.')
+    else:
+        if transaction == 'q':
+            break
+        elif transaction == 'd':
+            new_deposit = float(input('Please enter an amount to deposit: '))
+            acct1.deposit(new_deposit)
+            print(acct1)
+        elif transaction == 'w':
+            invalid_debit = True    
+            new_withdawal = float(input('Please enter an amount to withdraw: '))
+            while invalid_debit:
+                if new_withdawal > acct1.balance:
+                     new_withdawal = float(input(f'Withdawal exceeds current account balance, {acct1.balance}. \n\
 Please enter another amount: '))
-            else:
-                acct1.withdraw(new_withdawal)
-                invalid_debit = False
-                print(acct1)
-    elif transaction == 'b':
-        print('Account balance: ', acct1.balance)
+                else:
+                    acct1.withdraw(new_withdawal)
+                    invalid_debit = False
+                    print(acct1)
+        elif transaction == 'b':
+            print('Account balance: ', acct1.balance)
